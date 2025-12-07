@@ -10,24 +10,25 @@ this can be used in other applications to read a number after an identifiing wor
 -----------------------------------------------------------------
 
   This is the platformio.ini part of platform IO
-    Copy below this into that
+  
+  Copy code below this into platformio.ini
 
 -----------------------------------------------------------------
-
-[env:esp32-s3]
-platform = espressif32
-board = esp32-s3-devkitc-1    ; for esp32-s3
-framework = arduino
-
-monitor_speed = 115200        ; match Serial.begin baud
-monitor_port  = COM8          ; COM port of esp (only if auto-detect fails)
-upload_port   = COM8          ; COM port of esp (only if auto-detect fails)
-
-monitor_filters =
-    esp32_exception_decoder
-    send_on_enter
-
-build_flags =
-    -D ARDUINO_USB_CDC_ON_BOOT=1
-    -D ARDUINO_USB_MODE=1
     
+    [env:esp32-s3]
+    platform = espressif32
+    board = esp32-s3-devkitc-1    ; for esp32-s3
+    framework = arduino
+    
+    monitor_speed = 115200        ; match Serial.begin baud
+    monitor_port  = COM8          ; COM port of esp (only if auto-detect fails)
+    upload_port   = COM8          ; COM port of esp (only if auto-detect fails)
+    
+    monitor_filters =
+        esp32_exception_decoder
+        send_on_enter
+    
+    build_flags =
+        -D ARDUINO_USB_CDC_ON_BOOT=1
+        -D ARDUINO_USB_MODE=1
+        
